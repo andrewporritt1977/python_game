@@ -7,7 +7,7 @@ import random
 
 
 class Main:
-
+    os.system('clear')
     print ("********************")
     print ("**  Number Guess  **")
     print ("********************")
@@ -27,9 +27,13 @@ class Main:
             while i < round :
                 
                 try:
-                    guess = int(input("Guess my number please?\nIt's between 1 and 10\nYou have " + str(3-i) + " guesses left.\nYou are on level - " + str(player.score+1) + "\n"))
+                    guess = int(input("Guess my number please?\nIt's between 1 and 10\nYou have " 
+                                        + str(3-i) + " guesses left.\nYou are on level - " 
+                                        + str(player.score+1) + "\n"))
                     if guess == target :
-                        print('\nYou have been successful ' + player.name + ' the number was ' + str(target))
+                        print('\nYou have been successful ' 
+                                + player.name + ' the number was ' 
+                                + str(target))
                         player.addToScore(1)
                         print('your score is ' + str(player.score))
                         i = 0
@@ -58,16 +62,3 @@ class Main:
             time.sleep(1)
             Main.game()
 Main.game()
-
-
-
-
-# guess = int(input("Thanks " + player_name + " Guess my number please?"))
-# if guess == target :
-#     print('\nYep')
-# elif guess < target:
-#     print('\nHigher')
-# elif guess > target:
-#     print('\nLower')
-# else:
-#     print('\Try again')
