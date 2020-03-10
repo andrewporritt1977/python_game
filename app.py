@@ -4,46 +4,48 @@ import os
 import time
 import random
 
-print ("********************")
-print ("**  Number Guess  **")
-print ("********************")
-time.sleep(2)
-os.system('clear')
-target = random.randint(1,10)
 
 
+class Main:
 
-player = Player(input("Please enter your name - "))
-round = 3
+    print ("********************")
+    print ("**  Number Guess  **")
+    print ("********************")
+    time.sleep(2)
+    os.system('clear')
+    target = random.randint(1,10)
 
-play_round = input('Would you like to play a round? (y/n)')
+    player = Player(input("Please enter your name - "))
+    round = 3
 
-while play_round == 'y':
+    play_round = input('Would you like to play a round? (y/n)')
 
-    i = 0
-    while i < round :
-        guess = int(input("Thanks " + player.name + " Guess my number please?\nIt's between 1 and 10 - "))
-        if guess == target :
-            print('\nYou have been successful')
-            player.addToScore(1)
-            print('your score is ' + str(player.score) + " " + player.name)
-            i = 0
- 
-        elif guess < target:
-            print('\nHigher')
-            i += 1
-            continue
-        elif guess > target:
-            print('\nLower')
-            i += 1
-            continue
-    
-    print('\nYa done')
-    play_round = 'n'
+    while play_round == 'y':
 
-leaderboard = Leaderboard()
-leaderboard.addPlayerToList(player)
-leaderboard.printLeaderBoard()
+        i = 0
+        while i < round :
+            guess = int(input("Thanks " + player.name + " Guess my number please?\nIt's between 1 and 10 - "))
+            if guess == target :
+                print('\nYou have been successful')
+                player.addToScore(1)
+                print('your score is ' + str(player.score) + " " + player.name)
+                i = 0
+                target = random.randint(1,10)
+            elif guess < target:
+                print('\nHigher')
+                i += 1
+                continue
+            elif guess > target:
+                print('\nLower')
+                i += 1
+                continue
+        
+        print('\nYa done')
+        play_round = 'n'
+
+    leaderboard = Leaderboard()
+    leaderboard.addPlayerToList(player)
+    leaderboard.printLeaderBoard()
 
 
 
