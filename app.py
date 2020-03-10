@@ -25,9 +25,9 @@ class Main:
 
             i = 0
             while i < round :
-                guess = int(input("Thanks " + player.name + " Guess my number please?\nIt's between 1 and 10 - \nYou are on level - " + str(player.score+1) + "\n"))
+                guess = int(input("Thanks " + player.name + " Guess my number please?\nIt's between 1 and 10\nYou have " + str(3-i) + " guesses left.\nYou are on level - " + str(player.score+1) + "\n"))
                 if guess == target :
-                    print('\nYou have been successful')
+                    print('\nYou have been successful, the number was ' + str(target))
                     player.addToScore(1)
                     print('your score is ' + str(player.score) + " " + player.name)
                     i = 0
@@ -41,7 +41,7 @@ class Main:
                     i += 1
                     continue
             
-            print('\nYa done')
+            print('\nYa done \nThe number you were looking for was ' + str(target))
             play_round = 'n'
 
         leaderboard = Leaderboard()
