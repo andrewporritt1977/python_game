@@ -1,3 +1,5 @@
+from operator import attrgetter
+
 class Leaderboard:
     listOfPlayers = []
 
@@ -8,5 +10,8 @@ class Leaderboard:
         print ("********************")
         print ("**  Leaderboard  **")
         print ("********************")
-        for i in range(len(self.listOfPlayers) ): 
-            print(self.listOfPlayers[i])
+
+        sortedListOfPlayers = sorted(self.listOfPlayers, key=attrgetter('score'), reverse=True)
+
+        for i in range(len(sortedListOfPlayers) ): 
+            print(sortedListOfPlayers[i])
