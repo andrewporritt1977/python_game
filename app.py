@@ -10,12 +10,15 @@ os.system('clear')
 target = random.randint(1,10)
 player_name = input("Please enter your name - ")
 round = 3
+score = 0
 
 i = 0
 while i < round :
     guess = int(input("Thanks " + player_name + " Guess my number please?"))
     if guess == target :
-        print('\nYep')
+        print('\nYou have been successful')
+        score+=1
+        print('your score is ' + str(score) + " " + player_name)
         break
     elif guess < target and i < round:
         print('\nHigher')
