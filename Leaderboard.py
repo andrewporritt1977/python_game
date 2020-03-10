@@ -5,5 +5,8 @@ class Leaderboard:
         self.listOfPlayers.append(player)
 
     def printLeaderBoard(self):
+        print ("********************")
+        print ("**  Leaderboard  **")
+        print ("********************")
         for i in range(len(self.listOfPlayers) ): 
             print(self.listOfPlayers[i])
