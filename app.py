@@ -7,9 +7,9 @@ print ("**  Number Guess  **")
 print ("********************")
 time.sleep(2)
 os.system('clear')
-target = 4
+target = random.randint(1,10)
 
-#random.randint(1,10)
+
 
 player_name = input("Please enter your name - ")
 round = 3
