@@ -11,7 +11,7 @@ class Main:
     print ("********************")
     print ("**  Number Guess  **")
     print ("********************")
-    time.sleep(2)
+    time.sleep(1)
 
     def game():
         os.system('clear')
@@ -25,11 +25,11 @@ class Main:
 
             i = 0
             while i < round :
-                guess = int(input("Thanks " + player.name + " Guess my number please?\nIt's between 1 and 10\nYou have " + str(3-i) + " guesses left.\nYou are on level - " + str(player.score+1) + "\n"))
+                guess = int(input("Guess my number please?\nIt's between 1 and 10\nYou have " + str(3-i) + " guesses left.\nYou are on level - " + str(player.score+1) + "\n"))
                 if guess == target :
-                    print('\nYou have been successful, the number was ' + str(target))
+                    print('\nYou have been successful ' + player.name + ' the number was ' + str(target))
                     player.addToScore(1)
-                    print('your score is ' + str(player.score) + " " + player.name)
+                    print('your score is ' + str(player.score))
                     i = 0
                     target = random.randint(1,10)
                 elif guess < target:
