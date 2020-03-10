@@ -15,18 +15,18 @@ player_name = input("Please enter your name - ")
 round = 3
 score = 0
 
-play_round = input('Would you like to play a round?')
+play_round = input('Would you like to play a round? (y/n)')
 
-while play_round == 'yes':
+while play_round == 'y':
 
     i = 0
     while i < round :
-        guess = int(input("Thanks " + player_name + " Guess my number please?"))
+        guess = int(input("Thanks " + player_name + " Guess my number please?\nIt's between 1 and 10 - "))
         if guess == target :
             print('\nYou have been successful')
             score += 1
             print('your score is ' + str(score) + " " + player_name)
-            round = 3
+            i = 0
  
         elif guess < target:
             print('\nHigher')
@@ -38,7 +38,7 @@ while play_round == 'yes':
             continue
     
     print('\nYa done')
-    play_round = 'no'
+    play_round = 'n'
 
 
 
