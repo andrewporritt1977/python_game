@@ -7,7 +7,7 @@ import random
 
 
 class Main:
-
+    os.system('clear')
     print ("********************")
     print ("**  Number Guess  **")
     print ("********************")
@@ -65,16 +65,3 @@ class Main:
             time.sleep(1)
             Main.game()
 Main.game()
-
-
-
-
-# guess = int(input("Thanks " + player_name + " Guess my number please?"))
-# if guess == target :
-#     print('\nYep')
-# elif guess < target:
-#     print('\nHigher')
-# elif guess > target:
-#     print('\nLower')
-# else:
-#     print('\Try again')
