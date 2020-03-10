@@ -25,20 +25,29 @@ class Main:
 
             i = 0
             while i < round :
-                guess = int(input("Guess my number please?\nIt's between 1 and 10\nYou have " + str(3-i) + " guesses left.\nYou are on level - " + str(player.score+1) + "\n"))
-                if guess == target :
-                    print('\nYou have been successful ' + player.name + ' the number was ' + str(target))
-                    player.addToScore(1)
-                    print('your score is ' + str(player.score))
-                    i = 0
-                    target = random.randint(1,10)
-                elif guess < target:
-                    print('\nHigher')
-                    i += 1
+                
+                try:
+                    guess = int(input("Guess my number please?\nIt's between 1 and 10\nYou have " + str(3-i) + " guesses left.\nYou are on level - " + str(player.score+1) + "\n"))
+                    if guess == target :
+                        print('\nYou have been successful ' + player.name + ' the number was ' + str(target))
+                        player.addToScore(1)
+                        print('your score is ' + str(player.score))
+                        i = 0
+                        target = random.randint(1,10)
+                    elif guess < target:
+                        print('\nHigher')
+                        i += 1
+                        continue
+                    elif guess > target:
+                        print('\nLower')
+                        i += 1
+                        continue
+                      
+                except (TypeError, ValueError):
+                    print("Sorry, numbers only please")
                     continue
-                elif guess > target:
-                    print('\nLower')
-                    i += 1
+                except (UnboundLocalError):
+                    print("Sorry, numbers only please")
                     continue
             
             print('\nYa done \nThe number you were looking for was ' + str(target))
