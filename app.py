@@ -16,18 +16,18 @@ target = random.randint(1,10)
 player = Player(input("Please enter your name - "))
 round = 3
 
-play_round = input('Would you like to play a round?')
+play_round = input('Would you like to play a round? (y/n)')
 
-while play_round == 'yes':
+while play_round == 'y':
 
     i = 0
     while i < round :
-        guess = int(input("Thanks " + player.name + " Guess my number please?"))
+        guess = int(input("Thanks " + player.name + " Guess my number please?\nIt's between 1 and 10 - "))
         if guess == target :
             print('\nYou have been successful')
             player.addToScore(1)
             print('your score is ' + str(player.score) + " " + player.name)
-            round = 3
+            i = 0
  
         elif guess < target:
             print('\nHigher')
@@ -39,7 +39,7 @@ while play_round == 'yes':
             continue
     
     print('\nYa done')
-    play_round = 'no'
+    play_round = 'n'
 
 leaderboard = Leaderboard()
 leaderboard.addPlayerToList(player)
