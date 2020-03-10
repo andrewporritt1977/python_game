@@ -46,10 +46,7 @@ class Main:
                 except (TypeError, ValueError):
                     print("Sorry, numbers only please")
                     continue
-                except (UnboundLocalError):
-                    print("Sorry, numbers only please")
-                    continue
-            
+                
             print('\nYa done \nThe number you were looking for was ' + str(target))
             play_round = 'n'
 
