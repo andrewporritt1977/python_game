@@ -25,7 +25,7 @@ class Main:
 
             i = 0
             while i < round :
-                guess = int(input("Thanks " + player.name + " Guess my number please?\nIt's between 1 and 10 - "))
+                guess = int(input("Thanks " + player.name + " Guess my number please?\nIt's between 1 and 10 - \nYou are on level - " + str(player.score+1) + "\n"))
                 if guess == target :
                     print('\nYou have been successful')
                     player.addToScore(1)
